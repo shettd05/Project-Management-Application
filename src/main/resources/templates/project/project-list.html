@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout::headSection">
+</head>
+<body>
+<nav th:replace="layout::navbar"></nav>
+
+<div >
+<h4>Project Directory</h4>
+<br>
+
+<a href="/projects/new" class="btn btn-primary btn-sm" role="button" aria-pressed="true">New Project</a>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      
+      <th scope="col">Project Name</th>
+      <th scope="col">Stage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="project:${projects}">
+      <td th:text="${project.name}">
+      <td th:text="${project.stage}">
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>
